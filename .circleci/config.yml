@@ -16,11 +16,11 @@ jobs:
           name: 'Clone aport'
           command: "git clone --depth 1 https://github.com/alpinelinux/aports"
       - run:
-          name: 'Bootstrap'
-          command: 'aports/scripts/bootstrap.sh aarch64'
-      - run:
           name: "Generate key"
           command: "abuild-keygen -a -i -n"
+      - run:
+          name: 'Bootstrap'
+          command: 'aports/scripts/bootstrap.sh aarch64'
       - run:
           name: "Abuild"
           command: "abuild -F"
