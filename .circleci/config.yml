@@ -4,6 +4,7 @@ jobs:
   build-kernel:
     docker:
       - image: alpine:edge
+        user: user
     steps:
       - checkout
       - run:
@@ -15,8 +16,6 @@ jobs:
       - run:
           name: 'Bootstrap'
           command: |
-            adduser -S user -G abuild
-            su user
             cd ~
             abuild-keygen -a -i -n
             git clone --depth 1 https://github.com/alpinelinux/aports
