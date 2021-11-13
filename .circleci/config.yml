@@ -15,7 +15,7 @@ jobs:
       - run:
           name: 'Bootstrap'
           command: |
-            adduser user
+            adduser -S user -G abuild
             su user
             cd ~
             abuild-keygen -a -i -n
