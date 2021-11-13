@@ -6,21 +6,6 @@ jobs:
       - image: alpine:edge
     steps:
       - checkout
-      - run:
-          name: "Verify repository content"
-          command: "ls"
-      - run:
-          name: "Install dev dependencies"
-          command: "apk add alpine-sdk sudo"
-      - run:
-          name: 'Bootstrap'
-          command: |
-            adduser -G abuild -g "Alpine Package Builder" -s /bin/sh -D builder
-            echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-            cd /home/builder
-            sudo -u builder abuild-keygen -a -i -n
-            sudo -u builder git clone --depth 1 https://github.com/alpinelinux/aports
-            sudo -u builder aports/scripts/bootstrap.sh aarch64
 
 workflows:
   everything:
