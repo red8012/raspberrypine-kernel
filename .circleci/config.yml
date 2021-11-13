@@ -19,8 +19,8 @@ jobs:
             echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
             cd /home/builder
             sudo -u builder abuild-keygen -a -i -n
-            # git clone --depth 1 https://github.com/alpinelinux/aports
-            # aports/scripts/bootstrap.sh aarch64
+            sudo -u builder git clone --depth 1 https://github.com/alpinelinux/aports
+            sudo -u builder aports/scripts/bootstrap.sh aarch64
 
 workflows:
   everything:
