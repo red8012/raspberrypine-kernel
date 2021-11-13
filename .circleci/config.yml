@@ -10,6 +10,9 @@ jobs:
           name: "Verify repository content"
           command: "ls"
       - run:
+          name: "Generate key"
+          command: "abuild-keygen -a -i"
+      - run:
           name: "Install dev dependencies"
           command: "apk add alpine-sdk sudo"
 
