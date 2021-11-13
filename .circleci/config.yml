@@ -15,13 +15,13 @@ jobs:
       - run:
           name: 'Bootstrap'
           command: |
-            adduser -S user -G abuild -D
+            adduser -S user -D
             echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
             su -l user
-            cd ~
-            abuild-keygen -a -i -n
-            git clone --depth 1 https://github.com/alpinelinux/aports
-            aports/scripts/bootstrap.sh aarch64
+            # cd ~
+            # abuild-keygen -a -i -n
+            # git clone --depth 1 https://github.com/alpinelinux/aports
+            # aports/scripts/bootstrap.sh aarch64
 
 workflows:
   everything:
