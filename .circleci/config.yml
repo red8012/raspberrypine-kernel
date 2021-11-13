@@ -17,9 +17,8 @@ jobs:
           command: |
             adduser -G abuild -g "Alpine Package Builder" -s /bin/sh -D builder
             echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-            su -l builder
-            # cd ~
-            # abuild-keygen -a -i -n
+            cd /home/builder
+            sudo -u builder abuild-keygen -a -i -n
             # git clone --depth 1 https://github.com/alpinelinux/aports
             # aports/scripts/bootstrap.sh aarch64
 
