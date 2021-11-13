@@ -15,6 +15,9 @@ jobs:
       - run:
           name: "Generate key"
           command: "abuild-keygen -a -i -n"
+      - run:
+          name: "Abuild"
+          command: "abuild"
 
 workflows:
   everything:
