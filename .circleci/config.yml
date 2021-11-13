@@ -14,7 +14,7 @@ jobs:
           command: "apk add alpine-sdk sudo"
       - run:
           name: "Generate key"
-          command: "abuild-keygen -a -i"
+          command: "abuild-keygen -a -i -n"
 
 workflows:
   everything:
