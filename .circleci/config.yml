@@ -7,10 +7,10 @@ jobs:
     resource_class: arm.medium
     steps:
       - checkout
-      - run
-        command: 'ls'
-      - run
-        command: 'docker -v'
+      - run:
+          command: |
+            ls
+            docker -v
 
 workflows:
   everything:
