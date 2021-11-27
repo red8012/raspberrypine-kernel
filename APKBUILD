@@ -76,6 +76,7 @@ prepare() {
 	for flavor in $_flavors; do
 		local _builddir="$srcdir"/build-$flavor
 		mkdir -p "$_builddir"
+		echo builddir "$_builddir"
 		echo "-$pkgrel-$flavor" > "$_builddir"/localversion-alpine
 		_genconfig $flavor
 		make -C "$srcdir"/linux-$_kernver \
