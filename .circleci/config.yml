@@ -2,10 +2,15 @@ version: 2.1
 
 jobs:
   build-kernel:
-    docker:
-      - image: alpine:edge
+    machine:
+      image: ubuntu-2004:202101-01
+    resource_class: arm.medium
     steps:
       - checkout
+      - run
+        command: ls
+      - run
+        command: docker -v
 
 workflows:
   everything:
