@@ -3,3 +3,4 @@ set -xeuo pipefail
 
 cd ~
 pwd
+abuild
