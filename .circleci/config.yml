@@ -11,6 +11,9 @@ jobs:
           command: |
             ls
             docker -v
+      - run:
+          command: |
+            docker build .
 
 workflows:
   everything:
