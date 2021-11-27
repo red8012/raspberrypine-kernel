@@ -8,9 +8,9 @@ jobs:
     steps:
       - checkout
       - run
-        command: ls
+        command: 'ls'
       - run
-        command: docker -v
+        command: 'docker -v'
 
 workflows:
   everything:
