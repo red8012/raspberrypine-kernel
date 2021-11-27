@@ -5,4 +5,4 @@ cd ~
 pwd
 abuild-keygen -a -i -n
 abuild checksum
-cat APKBUILD
+abuild -r
