@@ -1,5 +1,5 @@
 pkgname=linux-rpi
-pkgver=5.15.1
+pkgver=5.15.4
 case $pkgver in
 *.*.*)	_kernver=${pkgver%.*};;
 *.*)	_kernver=${pkgver};;
