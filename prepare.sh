@@ -6,9 +6,9 @@ cd ~
 dpkg --add-architecture arm64
 apt update
 apt install -y dpkg-dev eatmydata crossbuild-essential-arm64 build-essential
-apt install -y gcc-11:arm64 gcc-arm-linux-gnueabihf:arm64
+apt install fakeroot git kernel-wedge quilt ccache flex bison libssl-dev dh-exec rsync libelf-dev bc
 
-apt-get build-dep -y linux-image-$LINUX_VER
+# apt-get build-dep -y linux-image-$LINUX_VER
 apt-get source -y linux-image-$LINUX_VER
 
 
