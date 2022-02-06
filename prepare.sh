@@ -1,5 +1,6 @@
 set -xeuo pipefail
 
+apt update
 apt install dpkg-dev eatmydata
 apt-get build-dep linux-image-$LINUX_VER
 apt-get source linux-source-$LINUX_VER
