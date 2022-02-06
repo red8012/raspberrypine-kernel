@@ -3,12 +3,13 @@ set -xeuo pipefail
 echo "deb-src http://deb.debian.org/debian bookworm main" >> /etc/apt/sources.list
 cd ~
 
+dpkg --add-architecture arm64
 apt update
-apt install -y dpkg-dev eatmydata
-apt install -y fakeroot git kernel-wedge quilt ccache flex bison libssl-dev dh-exec rsync libelf-dev bc crossbuild-essential-arm64
-apt install -y libssl-dev libelf-dev gcc-11 gcc-arm-linux-gnueabihf zlib1g-dev libcap-dev libpci-dev libglib2.0-dev libudev-dev libwrap0-dev libaudit-dev libbabeltrace-dev libdw-dev libiberty-dev libnewt-dev libnuma-dev libperl-dev libunwind-dev libopencsd-dev python3-dev dvipng gcc-11-aarch64-linux-gnu gcc-arm-linux-gnueabihf cpp-aarch64-linux-gnu gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+apt install -y dpkg-dev eatmydata crossbuild-essential-arm64 build-essential
+# apt install -y fakeroot git kernel-wedge quilt ccache flex bison libssl-dev dh-exec rsync libelf-dev bc crossbuild-essential-arm64
+# apt install -y libssl-dev libelf-dev gcc-11 gcc-arm-linux-gnueabihf zlib1g-dev libcap-dev libpci-dev libglib2.0-dev libudev-dev libwrap0-dev libaudit-dev libbabeltrace-dev libdw-dev libiberty-dev libnewt-dev libnuma-dev libperl-dev libunwind-dev libopencsd-dev python3-dev dvipng gcc-11-aarch64-linux-gnu gcc-arm-linux-gnueabihf cpp-aarch64-linux-gnu gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
 
-apt-get build-dep -y linux-image-$LINUX_VER
+apt-get build-dep -aarm64 -y linux-image-$LINUX_VER
 apt-get source -y linux-image-$LINUX_VER
 
 
