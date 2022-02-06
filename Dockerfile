@@ -1,3 +1,4 @@
-FROM alpine:edge
-ADD build.sh builder.sh APKBUILD config-changes-rpi4.aarch64 /
-RUN sh build.sh
+FROM debian:bookworm-slim
+
+ENV LINUX_VER=5.15.0-3-arm64-unsigned
+RUN sh prepare.sh

@@ -1,21 +1,16 @@
 version: 2.1
 
 jobs:
-  build-kernel:
-    machine:
-      image: ubuntu-2004:202101-01
-    resource_class: arm.medium
+  build:
+    docker:
+      image: debian:bookworm-slim
+    environment:
+      LINUX_VER: 5.15.0-3-arm64-unsigned
     steps:
       - checkout
-      - run:
-          command: |
-            ls
-            docker -v
-      - run:
-          command: |
-            docker build .
+      - run: sh prepare.sh
 
 workflows:
   everything:
     jobs:
-      - build-kernel
+      - build
