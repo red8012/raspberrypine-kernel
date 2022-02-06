@@ -8,7 +8,7 @@ jobs:
       LINUX_VER: 5.15.0-3-arm64-unsigned
     steps:
       - checkout
-      - run: sh prepare.sh
+      - run: bash prepare.sh
 
 workflows:
   everything:

@@ -1,4 +1,3 @@
-#!/bin/sh
 set -xeuo pipefail
 
 apt install dpkg-dev eatmydata
