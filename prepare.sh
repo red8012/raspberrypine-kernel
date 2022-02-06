@@ -7,6 +7,7 @@ dpkg --add-architecture arm64
 apt update
 apt install -y dpkg-dev eatmydata crossbuild-essential-arm64 build-essential
 apt install -y fakeroot git kernel-wedge quilt ccache flex bison libssl-dev dh-exec rsync libelf-dev bc
+apt install -y python3
 
 # apt-get build-dep -y linux-image-$LINUX_VER
 apt-get source -y linux-image-$LINUX_VER
