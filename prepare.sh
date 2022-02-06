@@ -6,7 +6,7 @@ cd ~
 dpkg --add-architecture arm64
 apt update
 apt install -y dpkg-dev eatmydata crossbuild-essential-arm64 build-essential
-apt install -y gcc-11 gcc-arm-linux-gnueabihf
+apt install -y gcc-11:arm64 gcc-arm-linux-gnueabihf:arm64
 
 apt-get build-dep -y linux-image-$LINUX_VER
 apt-get source -y linux-image-$LINUX_VER
