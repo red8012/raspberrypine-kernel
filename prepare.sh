@@ -1,6 +1,6 @@
 set -xeuo pipefail
 
-echo "deb-src http://deb.debian.org/debian bookworm main" > /etc/apt/sources.list
+echo "deb-src http://deb.debian.org/debian bookworm main" >> /etc/apt/sources.list
 cat /etc/apt/sources.list
 apt update
 apt install -y dpkg-dev eatmydata
