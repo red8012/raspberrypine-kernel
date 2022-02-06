@@ -1,7 +1,7 @@
 set -xeuo pipefail
 
 echo "deb-src http://deb.debian.org/debian bookworm main" >> /etc/apt/sources.list
-cat /etc/apt/sources.list
+cd ~
 apt update
 apt install -y dpkg-dev eatmydata
 apt-get build-dep -y linux-image-$LINUX_VER

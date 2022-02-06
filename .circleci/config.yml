@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
       - run: bash prepare.sh
+      - run: bash build.sh
 
 workflows:
   everything:
