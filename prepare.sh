@@ -5,7 +5,7 @@ cat /etc/apt/sources.list
 apt update
 apt install -y dpkg-dev eatmydata
 apt-get build-dep -y linux-image-$LINUX_VER
-apt-get source -y linux-source-$LINUX_VER
+apt-get source -y linux-image-$LINUX_VER
 
 
 # apt install build-essential bc kmod cpio flex libncurses5-dev libelf-dev libssl-dev dwarves
