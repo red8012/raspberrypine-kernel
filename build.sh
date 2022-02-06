@@ -5,7 +5,7 @@ cd ~/linux-*
 
 ARCH=arm64
 FEATURESET=none
-FLAVOUR=arm64
+FLAVOUR=cloud-arm64
 export $(dpkg-architecture -a$ARCH)
 export PATH=/usr/lib/ccache:$PATH
 export DEB_BUILD_PROFILES="cross nopython nodoc pkg.linux.notools"

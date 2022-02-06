@@ -4,6 +4,7 @@ jobs:
   build:
     docker:
       - image: debian:bookworm
+    resource_class: xlarge
     environment:
       LINUX_VER: 5.15.0-3-arm64-unsigned
     steps:
