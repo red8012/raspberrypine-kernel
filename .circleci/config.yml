@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: debian:bookworm-slim
+      - image: debian:bookworm
     environment:
       LINUX_VER: 5.15.0-3-arm64-unsigned
     steps:
