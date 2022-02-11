@@ -1,8 +1,6 @@
 set -xeuo pipefail
 
 cd ~/linux-*
-# eatmydata dpkg-buildpackage -uc -b -a arm64 -P=cross,nopython,nodoc,pkg.linux.notools
-
 ARCH=arm64
 FEATURESET=none
 FLAVOUR=cloud-arm64
@@ -16,8 +14,10 @@ time fakeroot make -f debian/rules orig
 time fakeroot make -f debian/rules source
 echo "$(dpkg-parsechangelog --show-field Distribution)"
 time fakeroot make -f debian/rules.gen setup_${ARCH}_${FEATURESET}_${FLAVOUR}
-time eatmydata fakeroot make -f debian/rules.gen binary-arch_${ARCH}_${FEATURESET}_${FLAVOUR}
+# time eatmydata fakeroot make -f debian/rules.gen binary-arch_${ARCH}_${FEATURESET}_${FLAVOUR}
+ls -a
 
 mkdir ~/deb_artifacts
+mv ../.config ~/deb_artifacts
 mv ../*.deb ~/deb_artifacts
 ls ~/deb_artifacts
