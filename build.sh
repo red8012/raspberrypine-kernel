@@ -21,6 +21,6 @@ ls -a debian/build/
 ls -a debian/build/build_arm64_none_cloud-arm64
 
 mkdir ~/deb_artifacts
-mv debian/build/build_arm64_none_cloud-arm64/*.config ~/deb_artifacts
+mv debian/build/build_arm64_none_cloud-arm64/.config ~/deb_artifacts
 mv ../*.deb ~/deb_artifacts
 ls ~/deb_artifacts
